@@ -35,5 +35,5 @@ service_min_asg=1
 127.0.0.1
 
 [ecr:vars]
-ecr_name=liuliang-ecr
+ecr_name=liuliang-app-demo
 account_arns=arn:aws:iam::394595319667:root
