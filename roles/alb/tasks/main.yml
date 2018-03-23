@@ -4,7 +4,6 @@
       stack_name: "{{alb_name}}"
       state: present
       region: "{{aws_region}}"
-      disable_rollback: true
       template: "cloudformation/alb.yml"
       template_parameters:
         VpcID: "{{aws_vpc_id}}"

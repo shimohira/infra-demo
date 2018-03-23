@@ -8,3 +8,12 @@ healthcheck_path=/
 container_host_port=9000
 target_group_name=liuliang-target-group
 
+[cluster]
+127.0.0.1
+
+[cluster:vars]
+instance_type=t2.micro
+max_asg=4
+min_asg=1
+desired_asg_capacity=1
+cluster_name=liuliang-ECS-cluster
