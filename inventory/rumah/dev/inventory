@@ -1,0 +1,10 @@
+[alb]
+127.0.0.1
+
+[alb:vars]
+alb_name=liuliang-alb
+scheme=internet-facing
+healthcheck_path=/
+container_host_port=9000
+target_group_name=liuliang-target-group
+

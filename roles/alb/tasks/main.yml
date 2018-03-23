@@ -1,0 +1,16 @@
+---
+  - name: Set up an Application Load Balancer
+    cloudformation:
+      stack_name: "{{alb_name}}"
+      state: present
+      region: "{{aws_region}}"
+      disable_rollback: true
+      template: "cloudformation/alb.yml"
+      template_parameters:
+        VpcID: "{{aws_vpc_id}}"
+        Subnets: "{{public_subnets}}"
+        LoadBalancerName: "{{alb_name}}"
+        Scheme: "{{scheme}}"
+        HealthCheckPath: "{{healthcheck_path}}"
+        InstancePort: "{{container_host_port}}"
+        TargetGroupName: "{{target_group_name}}"
