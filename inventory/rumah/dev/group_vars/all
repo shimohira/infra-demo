@@ -5,3 +5,4 @@ public_subnets: subnet-50692f08, subnet-764bc601
 key_name: myfun-dev
 ami: ami-5add893c
 zones: ap-northeast-1a, ap-northeast-1c
+ecr: 
