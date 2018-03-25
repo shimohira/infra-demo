@@ -87,9 +87,9 @@ Resources:
     Properties:
       ContainerDefinitions:
         - Name: !Join ['-', [!Ref 'ServiceName', !Ref 'BuildNumber']]
-          Cpu: 512
+          Cpu: 128
           Essential: 'true'
-          Memory: 512
+          Memory: 128
           PortMappings:
             - HostPort: 0
               Protocol: tcp
