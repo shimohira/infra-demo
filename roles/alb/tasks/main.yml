@@ -1,7 +1,7 @@
 ---
   - name: Set up an Application Load Balancer
     cloudformation:
-      stack_name: "{{alb_name}}"
+      stack_name: "{{alb_name}}-alb"
       state: present
       region: "{{aws_region}}"
       template: "cloudformation/alb.yml"
@@ -11,5 +11,4 @@
         LoadBalancerName: "{{alb_name}}"
         Scheme: "{{scheme}}"
         HealthCheckPath: "{{healthcheck_path}}"
-        InstancePort: "{{container_host_port}}"
         TargetGroupName: "{{target_group_name}}"

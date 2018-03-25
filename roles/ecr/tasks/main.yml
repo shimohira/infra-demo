@@ -1,7 +1,7 @@
 ---
   - name: ECR Stack
     cloudformation:
-      stack_name: "{{ecr_name}}"
+      stack_name: "{{ecr_name}}-ecr"
       state: present
       region: "{{aws_region}}"
       template: "cloudformation/ecr.yml"

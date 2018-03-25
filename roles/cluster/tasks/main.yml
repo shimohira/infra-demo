@@ -1,7 +1,7 @@
 ---
   - name: Set up an ECS cluster
     cloudformation:
-      stack_name: "{{cluster_name}}"
+      stack_name: "{{cluster_name}}-cluster"
       state: present
       region: "{{aws_region}}"
       template: "cloudformation/cluster.yml"

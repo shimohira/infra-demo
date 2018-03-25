@@ -2,11 +2,10 @@
 127.0.0.1
 
 [alb:vars]
-alb_name=liuliang-alb
+alb_name=liuliang-demo-app
 scheme=internet-facing
 healthcheck_path=/
-container_host_port=9000
-target_group_name=liuliang-target-group
+target_group_name=liuliang-app-demo
 
 [cluster]
 127.0.0.1
@@ -16,20 +15,21 @@ instance_type=t2.micro
 max_asg=4
 min_asg=1
 desired_asg_capacity=1
-cluster_name=liuliang-ECS-cluster
+cluster_name=liuliang-app-demo
 
 [service]
 127.0.0.1
 
 [service:vars]
-target_group_name=liuliang-target-group
+target_group_arn=arn:aws:elasticloadbalancing:ap-northeast-1:394595319667:targetgroup/liuliang-app-demo/d6e2d74b6a4eae03
 desired_count=1
-service_name=liuliang-ecs-service
-build_number=1
+service_name=liuliang-app-demo
+build_number=13
 container_port=9000
-ecs_cluster=liuliang-ECS-cluster
+ecs_cluster=liuliang-app-demo
 service_max_asg=4
 service_min_asg=1
+ecr=394595319667.dkr.ecr.ap-northeast-1.amazonaws.com
 
 [ecr]
 127.0.0.1

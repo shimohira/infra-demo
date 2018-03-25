@@ -1,12 +1,12 @@
 ---
   - name: Set up an ECS service
     cloudformation:
-      stack_name: "{{service_name}}"
+      stack_name: "{{service_name}}-ECS-service"
       state: present
       region: "{{aws_region}}"
       template: "cloudformation/service.yml"
       template_parameters:
-        TargetGroup: "{{target_group_name}}"
+        TargetGroupArn: "{{target_group_arn}}"
         DesiredCount: "{{desired_count}}"
         ServiceName: "{{service_name}}"
         BuildNumber: "{{build_number}}"

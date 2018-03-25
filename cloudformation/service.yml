@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Setup an ECS service
 Parameters:
-  TargetGroup:
+  TargetGroupArn:
     Type: String
-    Description: Name of TargetGroup
+    Description: Arn of TargetGroup
   DesiredCount:
     Type: Number
     Description: Desired count of task
@@ -42,9 +42,9 @@ Resources:
         Ref: DesiredCount
       LoadBalancers:
         - ContainerName: !Join ['-', [!Ref 'ServiceName', !Ref 'BuildNumber']]
-          ContainerPort: 3000
+          ContainerPort: !Ref 'ContainerPort'
           TargetGroupArn:
-            Ref: TargetGroup
+            Ref: TargetGroupArn
       DeploymentConfiguration:
         MaximumPercent: '200'
         MinimumHealthyPercent: '50'

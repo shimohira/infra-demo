@@ -21,9 +21,6 @@ Parameters:
   TargetGroupName:
     Type: String
     Description: name of TargetGroup
-  InstancePort:
-    Type: String
-    Description: Application port on instance
 
 Resources:
   SecurityGroup:
@@ -76,8 +73,7 @@ Resources:
       HealthyThresholdCount: 5
       Name:
         Ref: TargetGroupName
-      Port:
-        Ref: InstancePort
+      Port: 80
       Protocol: HTTP
       UnhealthyThresholdCount: 3
       VpcId:
