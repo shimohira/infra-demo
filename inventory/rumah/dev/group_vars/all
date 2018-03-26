@@ -1,7 +1,7 @@
-aws_region: ap-northeast-1
-aws_vpc_id: vpc-de4afdbb
-private_subnets: subnet-a8e65bf1, subnet-5f4bc628
-public_subnets: subnet-50692f08, subnet-764bc601
-key_name: myfun-dev
-ami: ami-5add893c
-zones: ap-northeast-1a, ap-northeast-1c
+aws_region: ap-southeast-1
+aws_vpc_id: vpc-e19d0285
+private_subnets: subnet-df1c47bb, subnet-31733f47
+public_subnets: subnet-4913482d, subnet-30733f46
+key_name: awscloud-rumah123-development-sg
+ami: ami-acbcefd0
+zones: ap-southeast-1a, ap-southeast-1b
